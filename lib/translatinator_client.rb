@@ -11,6 +11,7 @@ module Translatinator
       puts "use LANG 'text-to-translate'   Translate text (LANG = language abbreviation)."
       puts 'help                           Show these commands again.'
       puts 'exit                           Closes application.'
+      puts ' '
       get_command
     end
 
@@ -20,91 +21,99 @@ module Translatinator
 
         case input
           when 'lang'
-            puts 'Supported Languages:'
-            puts      'Afrikaans .......................... AF\n'
-            puts      'Albanian ........................... SQ\n'
-            puts      'Arabic ............................. AR\n'
-            puts      'Azerbaijani ........................ AZ\n'
-            puts      'Basque ............................. EU\n'
-            puts      'Bengali ............................ BN\n'
-            puts      'Belarusian ......................... BE\n'
-            puts      'Bulgarian .......................... BG\n'
-            puts      'Catalan ............................ CA\n'
-            puts      'Chinese Simplified ................. ZH-CN\n'
-            puts      'Chinese Traditional ................ ZH-TW\n'
-            puts      'Croatian ........................... HR\n'
-            puts      'Czech .............................. CS\n'
-            puts      'Danish ............................. DA\n'
-            puts      'Dutch .............................. NL\n'
-            puts      'English ............................ EN\n'
-            puts      'Esperanto .......................... EO\n'
-            puts      'Estonian ........................... ET\n'
-            puts      'Filipino ........................... TL\n'
-            puts      'Finnish ............................ FI\n'
-            puts      'French ............................. FR\n'
-            puts      'Galician ........................... GL\n'
-            puts      'Georgian ........................... KA\n'
-            puts      'German ............................. DE\n'
-            puts      'Greek .............................. EL\n'
-            puts      'Gujarati ........................... GU\n'
-            puts      'Haitian Creole ..................... HT\n'
-            puts      'Hebrew ............................. IW\n'
-            puts      'Hindi .............................. HI\n'
-            puts      'Hungarian .......................... HU\n'
-            puts      'Icelandic .......................... IS\n'
-            puts      'Indonesian ......................... ID\n'
-            puts      'Irish .............................. GA\n'
-            puts      'Italian ............................ IT\n'
-            puts      'Japanese ........................... JA\n'
-            puts      'Kannada ............................ KN\n'
-            puts      'Korean ............................. KO\n'
-            puts      'Latin .............................. LA\n'
-            puts      'Latvian ............................ LV\n'
-            puts      'Lithuanian ......................... LT\n'
-            puts      'Macedonian ......................... MK\n'
-            puts      'Malay .............................. MS\n'
-            puts      'Maltese ............................ MT\n'
-            puts      'Norwegian .......................... NO\n'
-            puts      'Persian ............................ FA\n'
-            puts      'Polish ............................. PL\n'
-            puts      'Portuguese ......................... PT\n'
-            puts      'Romanian ........................... RO\n'
-            puts      'Russian ............................ RU\n'
-            puts      'Serbian ............................ SR\n'
-            puts      'Slovak ............................. SK\n'
-            puts      'Slovenian .......................... SL\n'
-            puts      'Spanish ............................ ES\n'
-            puts      'Swahili ............................ SW\n'
-            puts      'Swedish ............................ SV\n'
-            puts      'Tamil .............................. TA\n'
-            puts      'Telugu ............................. TE\n'
-            puts      'Thai ............................... TH\n'
-            puts      'Turkish ............................ TR\n'
-            puts      'Ukrainian .......................... UK\n'
-            puts      'Urdu ............................... UR\n'
-            puts      'Vietnamese ......................... VI\n'
-            puts      'Welsh .............................. CY\n'
-            puts      'Yiddish ............................ YI\n'
-
-        when input.match(/[use]/)
-          words = input.split(' ')
-          command = words[0]
-          language = words[1]
-          text = words[2..words.length].join(' ')
-            puts "we're going to translate '#{text}' into #{language}."
-
+            puts ' '
+            puts 'SUPPORTED LANGUAGES:'
+            puts      'Afrikaans .......................... AF'
+            puts      'Albanian ........................... SQ'
+            puts      'Arabic ............................. AR'
+            puts      'Azerbaijani ........................ AZ'
+            puts      'Basque ............................. EU'
+            puts      'Bengali ............................ BN'
+            puts      'Belarusian ......................... BE'
+            puts      'Bulgarian .......................... BG'
+            puts      'Catalan ............................ CA'
+            puts      'Chinese Simplified ................. ZH-CN'
+            puts      'Chinese Traditional ................ ZH-TW'
+            puts      'Croatian ........................... HR'
+            puts      'Czech .............................. CS'
+            puts      'Danish ............................. DA'
+            puts      'Dutch .............................. NL'
+            puts      'English ............................ EN'
+            puts      'Esperanto .......................... EO'
+            puts      'Estonian ........................... ET'
+            puts      'Filipino ........................... TL'
+            puts      'Finnish ............................ FI'
+            puts      'French ............................. FR'
+            puts      'Galician ........................... GL'
+            puts      'Georgian ........................... KA'
+            puts      'German ............................. DE'
+            puts      'Greek .............................. EL'
+            puts      'Gujarati ........................... GU'
+            puts      'Haitian Creole ..................... HT'
+            puts      'Hebrew ............................. IW'
+            puts      'Hindi .............................. HI'
+            puts      'Hungarian .......................... HU'
+            puts      'Icelandic .......................... IS'
+            puts      'Indonesian ......................... ID'
+            puts      'Irish .............................. GA'
+            puts      'Italian ............................ IT'
+            puts      'Japanese ........................... JA'
+            puts      'Kannada ............................ KN'
+            puts      'Korean ............................. KO'
+            puts      'Latin .............................. LA'
+            puts      'Latvian ............................ LV'
+            puts      'Lithuanian ......................... LT'
+            puts      'Macedonian ......................... MK'
+            puts      'Malay .............................. MS'
+            puts      'Maltese ............................ MT'
+            puts      'Norwegian .......................... NO'
+            puts      'Persian ............................ FA'
+            puts      'Polish ............................. PL'
+            puts      'Portuguese ......................... PT'
+            puts      'Romanian ........................... RO'
+            puts      'Russian ............................ RU'
+            puts      'Serbian ............................ SR'
+            puts      'Slovak ............................. SK'
+            puts      'Slovenian .......................... SL'
+            puts      'Spanish ............................ ES'
+            puts      'Swahili ............................ SW'
+            puts      'Swedish ............................ SV'
+            puts      'Tamil .............................. TA'
+            puts      'Telugu ............................. TE'
+            puts      'Thai ............................... TH'
+            puts      'Turkish ............................ TR'
+            puts      'Ukrainian .......................... UK'
+            puts      'Urdu ............................... UR'
+            puts      'Vietnamese ......................... VI'
+            puts      'Welsh .............................. CY'
+            puts      'Yiddish ............................ YI'
+            puts ' '
         when 'help'
+          puts ' '
           start
         when 'exit'
           Translatinator::TerminalClient.exit
 
         else
-          puts "Oh no! It looks like you entered text that I'm unable to use. Please try again."
-          puts 'lang                           Display supported languages and abbreviations.'
-          puts "use LANG 'text-to-translate'   Translate text (LANG = language abbreviation)."
-          puts 'help                           Show these commands again.'
-          puts 'exit                           Closes application.'
-          get_command
+          check = input[0..2]
+          if check == 'use'
+            words = input.split(' ')
+            words.slice!(0)
+            language = words[0]
+            text = words[1..words.length].join(' ')
+
+            puts "we're going to translate '#{text}' into #{language}."
+
+          else
+            puts ' '
+            puts "Oh no! It looks like you entered text that I'm unable to use. Please try again."
+            puts 'lang                           Display supported languages and abbreviations.'
+            puts "use LANG 'text-to-translate'   Translate text (LANG = language abbreviation)."
+            puts 'help                           Show these commands again.'
+            puts 'exit                           Closes application.'
+            puts ' '
+            get_command
+          end
         end
       end
     end
