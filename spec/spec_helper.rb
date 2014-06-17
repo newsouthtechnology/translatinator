@@ -12,25 +12,28 @@ describe Translatinator do
     expect(result).to eq(false)
   end
 
-  xit "moves consonant(s) to the end of input" do
-    translate('')
+  xit "" do
 
-    expect(result).to eq()
-  end
-
-  xit "adds 'ay' to end of input" do
-    expect(result).to eq()
-  end
-
-  xit "if word starts with a vowel it adds 'way' to the end" do
-    expect(result).to eq()
-  end
-
-  xit "if word starts with y it adds 'ay' to the end" do
     expect(result).to eq()
   end
 
   xit "" do
+
+    expect(result).to eq()
+  end
+
+  xit "" do
+
+    expect(result).to eq()
+  end
+
+  xit "" do
+
+    expect(result).to eq()
+  end
+
+  xit "" do
+
     expect(result).to eq()
   end
 end
