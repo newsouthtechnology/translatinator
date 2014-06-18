@@ -1,4 +1,8 @@
 require_relative "translatinator/version"
+require 'http'
+require 'json'
+require 'google/api_client'
+
 
 module Translatinator
   class TerminalClient
@@ -99,10 +103,11 @@ module Translatinator
           if check == 'use'
             words = input.split(' ')
             words.slice!(0)
-            language = words[0]
+            language = words[0].downcase
             text = words[1..words.length].join(' ')
 
-            puts "we're going to translate '#{text}' into #{language}."
+            translate(language, text)
+            # puts "we're going to translate '#{@text}' into #{@language}."
 
           else
             puts ' '
@@ -118,8 +123,29 @@ module Translatinator
       end
     end
 
-    def translate
+    def self.translate(language, text)
+      text = text.gsub(/' '/, '%20')
+
       # use google translate api here
+      client = Google::APIClient.new(
+        :application_name => 'Translatinator',
+        :application_version => '0.0.1',
+        :key => 'AIzaSyCy9bWyky8mYNjYrSI-NA68Z4wFQVn__R8'
+        )
+      translate = client.discovered_api('translate', 'v2')
+      result = client.execute(
+        :api_method => translate.translations.list,
+        :parameters => {
+          'format' => 'text',
+          'source' => 'en',
+          'target' => language.downcase,
+          'q' => text
+        }
+      )
+
+      # translation = HTTP.get('https://www.googleapis.com/language/translate/v2?key=AIzaSyCy9bWyky8mYNjYrSI-NA68Z4wFQVn__R8&q=' + text + '&source=en&target=' + language).to_json
+      # puts JSON.pars(translation)
+
     end
 
   end
@@ -127,6 +153,14 @@ module Translatinator
 end
 
 
+
+# https://www.googleapis.com/language/translate/v2?key=AIzaSyCy9bWyky8mYNjYrSI-NA68Z4wFQVn__R8&q=hello%20world&source=en&target=de
+
+
+
+
 Translatinator::TerminalClient.start
 
 # $ bundle exec ruby translatinator.rb
+
+
