@@ -124,28 +124,34 @@ module Translatinator
     end
 
     def self.translate(language, text)
-      text = text.gsub(/' '/, '%20')
+      # language = language.downcase
+      # text = text.gsub(/' '/, '%20')
 
       # use google translate api here
-      client = Google::APIClient.new(
-        :application_name => 'Translatinator',
-        :application_version => '0.0.1',
-        :key => 'AIzaSyCy9bWyky8mYNjYrSI-NA68Z4wFQVn__R8'
-        )
-      translate = client.discovered_api('translate', 'v2')
-      result = client.execute(
-        :api_method => translate.translations.list,
-        :parameters => {
-          'format' => 'text',
-          'source' => 'en',
-          'target' => language.downcase,
-          'q' => text
-        }
-      )
+      # client = Google::APIClient.new(
+      #   :application_name => 'Translatinator',
+      #   :application_version => '0.0.1',
+      #   :key => 'AIzaSyCy9bWyky8mYNjYrSI-NA68Z4wFQVn__R8'
+      #   )
+      # translate = client.discovered_api('translate', 'v2')
+      # result = client.execute(
+      #   :api_method => translate.translations.list,
+      #   :parameters => {
+      #     'format' => 'text',
+      #     'source' => 'en',
+      #     'target' => language,
+      #     'q' => text
+      #   }
+      # )
 
-      # translation = HTTP.get('https://www.googleapis.com/language/translate/v2?key=AIzaSyCy9bWyky8mYNjYrSI-NA68Z4wFQVn__R8&q=' + text + '&source=en&target=' + language).to_json
+      # url = "https://www.googleapis.com/language/translate/v2?key=AIzaSyCy9bWyky8mYNjYrSI-NA68Z4wFQVn__R8&q=hello%20world&source=en&target=de"
+
+
+      result = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyCy9bWyky8mYNjYrSI-NA68Z4wFQVn__R8&q=' + text + '&source=en&target=' + language
+      # translation = HTTP.get(result).to_json
       # puts JSON.pars(translation)
-
+      result = HTTP.get(result)
+      puts result
     end
 
   end
@@ -156,6 +162,8 @@ end
 
 # https://www.googleapis.com/language/translate/v2?key=AIzaSyCy9bWyky8mYNjYrSI-NA68Z4wFQVn__R8&q=hello%20world&source=en&target=de
 
+# key
+# AIzaSyCy9bWyky8mYNjYrSI-NA68Z4wFQVn__R8
 
 
 
