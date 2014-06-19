@@ -5,3 +5,4 @@ gemspec
 
 gem 'http'
 gem 'google-api-client'
+gem 'pry'

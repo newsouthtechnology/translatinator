@@ -1,7 +1,8 @@
 require_relative "translatinator/version"
 require 'http'
 require 'json'
-require 'google/api_client'
+require 'rubygems'
+require 'pry'
 
 
 module Translatinator
@@ -97,7 +98,6 @@ module Translatinator
           start
         when 'exit'
           Translatinator::TerminalClient.exit
-
         else
           check = input[0..2]
           if check == 'use'
@@ -107,8 +107,6 @@ module Translatinator
             text = words[1..words.length].join(' ')
 
             translate(language, text)
-            # puts "we're going to translate '#{@text}' into #{@language}."
-
           else
             puts ' '
             puts "Oh no! It looks like you entered text that I'm unable to use. Please try again."
@@ -124,48 +122,23 @@ module Translatinator
     end
 
     def self.translate(language, text)
-      # language = language.downcase
-      # text = text.gsub(/' '/, '%20')
-
-      # use google translate api here
-      # client = Google::APIClient.new(
-      #   :application_name => 'Translatinator',
-      #   :application_version => '0.0.1',
-      #   :key => 'AIzaSyCy9bWyky8mYNjYrSI-NA68Z4wFQVn__R8'
-      #   )
-      # translate = client.discovered_api('translate', 'v2')
-      # result = client.execute(
-      #   :api_method => translate.translations.list,
-      #   :parameters => {
-      #     'format' => 'text',
-      #     'source' => 'en',
-      #     'target' => language,
-      #     'q' => text
-      #   }
-      # )
-
-      # url = "https://www.googleapis.com/language/translate/v2?key=AIzaSyCy9bWyky8mYNjYrSI-NA68Z4wFQVn__R8&q=hello%20world&source=en&target=de"
-
+      text = text.gsub(' ', '%20')
 
       result = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyCy9bWyky8mYNjYrSI-NA68Z4wFQVn__R8&q=' + text + '&source=en&target=' + language
-      # translation = HTTP.get(result).to_json
-      # puts JSON.pars(translation)
       result = HTTP.get(result)
-      puts result
-    end
+      parsed =  JSON.parse(result)
 
+      unless parsed["data"]["translations"].count > 1
+        parsed["data"]["translations"].each do |x|
+          puts x["translatedText"]
+        end
+      end
+    end
   end
 
 end
 
-
-
-# https://www.googleapis.com/language/translate/v2?key=AIzaSyCy9bWyky8mYNjYrSI-NA68Z4wFQVn__R8&q=hello%20world&source=en&target=de
-
-# key
-# AIzaSyCy9bWyky8mYNjYrSI-NA68Z4wFQVn__R8
-
-
+# {"data"=>{"translations"=>[{"translatedText"=>"bonne journ\u00E9e"}]}}
 
 Translatinator::TerminalClient.start
 

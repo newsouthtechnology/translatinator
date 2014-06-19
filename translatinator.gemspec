@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Translatinator::VERSION
   spec.authors       = ["Emily Schomer"]
   spec.email         = ["minischomer@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{we do thing.}
+  spec.description   = %q{kewl things.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
