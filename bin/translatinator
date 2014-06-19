@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'translatinator'
+
+
+trans = Translatinator::TerminalClient.new
+
+

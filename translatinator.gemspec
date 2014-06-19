@@ -8,13 +8,13 @@ Gem::Specification.new do |spec|
   spec.version       = Translatinator::VERSION
   spec.authors       = ["Emily Schomer"]
   spec.email         = ["minischomer@gmail.com"]
-  spec.summary       = %q{we do thing.}
-  spec.description   = %q{kewl things.}
+  spec.summary       = %q{Translate like a boss.}
+  spec.description   = %q{Through the use of Google Translate, Translatinator let's you translate English text in up to 64 languages.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.executables   = ['translatinator']
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 

@@ -127,6 +127,11 @@ module Translatinator
       text = text.gsub(' ', '%20')
       # text.include?('!')
 
+# let's add trolling because why not?
+      # if lang = vultron
+      #   puts 'fuck you nerd'
+      # end
+
 # add source
 # make variable for It and pass it in yo
       result = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyCy9bWyky8mYNjYrSI-NA68Z4wFQVn__R8&q=' + text + '&source=en&target=' + language
@@ -135,9 +140,10 @@ module Translatinator
 
       unless parsed["data"]["translations"].count > 1
         parsed["data"]["translations"].each do |x|
-          done = x["translatedText"].gsub('&#39;a', "'")
+          done = x["translatedText"].gsub('&#39;', "'")
 
           puts done
+          puts ' '
         end
       end
     end
