@@ -20,8 +20,8 @@ module Translatinator
       get_command
     end
 
+
     def self.get_command
-      while true
         input = gets.chomp
 
         case input
@@ -93,11 +93,13 @@ module Translatinator
             puts      'Welsh .............................. CY'
             puts      'Yiddish ............................ YI'
             puts ' '
+            get_command
         when 'help'
           puts ' '
           start
         when 'exit'
-          Translatinator::TerminalClient.exit
+          puts 'goodbye bitches!'
+          exit
         else
           check = input[0..2]
           if check == 'use'
@@ -107,6 +109,7 @@ module Translatinator
             text = words[1..words.length].join(' ')
 
             translate(language, text)
+            get_command
           else
             puts ' '
             puts "Oh no! It looks like you entered text that I'm unable to use. Please try again."
@@ -118,19 +121,23 @@ module Translatinator
             get_command
           end
         end
-      end
     end
 
     def self.translate(language, text)
       text = text.gsub(' ', '%20')
+      # text.include?('!')
 
+# add source
+# make variable for It and pass it in yo
       result = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyCy9bWyky8mYNjYrSI-NA68Z4wFQVn__R8&q=' + text + '&source=en&target=' + language
       result = HTTP.get(result)
       parsed =  JSON.parse(result)
 
       unless parsed["data"]["translations"].count > 1
         parsed["data"]["translations"].each do |x|
-          puts x["translatedText"]
+          done = x["translatedText"].gsub('&#39;a', "'")
+
+          puts done
         end
       end
     end
