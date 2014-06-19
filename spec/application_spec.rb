@@ -6,4 +6,10 @@ describe Translatinator do
 
     expect(result).to include('Welcome', 'lang', 'text-to-translate')
   end
+
+  it "runs a help method" do
+    result = Translatinator.help
+
+    expect(result).to include('Welcome', 'lang', 'text-to-translate')
+  end
 end

@@ -2,24 +2,24 @@
 module Translatinator
   attr_accessor :input
 
-  def self.get_command(input)
-    input = gets.chomp
-    if input == 'lang'
-      lang
-    elsif input == 'help' || 'h' || '--h'
-      help
-    else
-      check = input[0..2]
-      if check == 'use'
-        words = input.split(' ')
-        words.slice!(0)
-        language = words[0].downcase
-        text = words[1..words.length].join(' ')
+  # def self.get_command(input)
+  #   input = gets.chomp
+  #   if input == 'lang'
+  #     lang
+  #   elsif input == 'help'
+  #     help
+  #   else
+  #     check = input[0..2]
+  #     if check == 'use'
+  #       words = input.split(' ')
+  #       words.slice!(0)
+  #       language = words[0].downcase
+  #       text = words[1..words.length].join(' ')
 
-        translate(language, text)
-      end
-    end
-  end
+  #       translate(language, text)
+  #     end
+  #   end
+  # end
 
 # convert to hash FTW
   def self.lang
@@ -95,10 +95,9 @@ module Translatinator
   def self.help
     'Welcome to Translatinator!
     Below are the commands to get your text translated.
-    lang                           Display supported languages and abbreviations.
-    use LANG text-to-translate     Translate text (LANG = language abbreviation).
-    help                           Show these commands again.
-    exit                           Closes application.
+    -l, --lang                      Display supported languages and abbreviations.
+    -use LANG text-to-translate     Translate text (LANG = language abbreviation).
+    -h, --help                      Show these commands again.
      '
   end
 
