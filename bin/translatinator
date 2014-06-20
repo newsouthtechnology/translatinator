@@ -20,10 +20,9 @@ optparse = OptionParser.new do|opts|
     puts ' '
     puts 'SUPPORTED LANGUAGES:'
     puts Translatinator.lang
-    puts ' '
     exit
   end
-    opts.on('-help') do
+  opts.on('-help', '-menu') do
     puts Translatinator.help
     exit
   end
