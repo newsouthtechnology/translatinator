@@ -3,34 +3,24 @@
 require 'translatinator'
 require 'optparse'
 require 'pp'
-require 'pry'
 
 # container
 options = {}
 
 optparse = OptionParser.new do|opts|
-  # TODO: Put command-line options here
 
-  # This displays the help screen, all programs are
-  # assumed to have this option.
   opts.on( '-use') do
-    check = input[1..3]
-      if check == 'use'
-        words = input.split(' ')
-        words.slice!(0)
-        language = words[0].downcase
-        text = words[1..words.length].join(' ')
-        puts Translatinator.translate(language, text)
-      else
-        puts 'Input failure. Please try again (THIS TIME WITHOUT TYPOS).'
-      end
+    language = ARGV[0].downcase
+    text = ARGV[1]
+# binding.pry
+  puts Translatinator.translate(language, text)
     exit
   end
-  opts.on( '-l', '--lang') do
+  opts.on( '-lang') do
     puts Translatinator.lang
     exit
   end
-    opts.on( '-h', '--help') do
+    opts.on('-help') do
     puts Translatinator.help
     exit
   end
@@ -47,3 +37,10 @@ optparse.parse!
 pp "Options:", options
 pp "ARGV:", ARGV
 
+
+#CALL THANGS
+# translatinator -lang
+# translatinator -l
+# translatinator use fr "HAVE A NICE DAY"
+# translatinator -h
+# translatinator -help
