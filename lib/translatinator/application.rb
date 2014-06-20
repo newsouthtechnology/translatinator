@@ -71,9 +71,7 @@ module Translatinator
         :Yiddish => 'YI'
     }
 # binding.pry
-    languageMenu.each do |key, value|
-        puts "#{key} ........................ #{value}"
-    end
+    return languageMenu
     puts ' '
   end
 
@@ -102,7 +100,7 @@ module Translatinator
         unless parsed["data"]["translations"].count > 1
           parsed["data"]["translations"].each do |x|
             done = x["translatedText"].gsub("&#39;", "'")
-            puts done
+            return done
           end
         end
     end
