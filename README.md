@@ -1,6 +1,10 @@
 # Translatinator
 
-TODO: Write a gem description
+TODO: add logo
+
+## About
+
+Translatinator is a Ruby command-line application that allows you to translate text via Google Translate in your terminal client. Why? Because you can!
 
 ## Installation
 
@@ -18,7 +22,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To use Translatinator:
+    -lang ............................ Display supported languages and abbreviations.
+    -use LANG \"text-to-translate\" .... Translate text (LANG = language abbreviation).
+    -help, -menu ..................... Show these commands again.
+
+  Example
+    In your terminal client, type the following command:
+      translatinator -use fr "Good Morning"
+
+      Result: "Bon Matin"
+
+  NOTE: This is a very young project by a noob developer. Currently the use of '!'s causes bugs that will be fixed in the near future.
 
 ## Contributing
 
