@@ -8,6 +8,11 @@ options = {}
 
 optparse = OptionParser.new do|opts|
 
+  opts.on( nil ) do
+    puts Translatinator.help
+    exit
+  end
+
   opts.on( '-use') do
     language = ARGV[0].downcase
     text = ARGV[1]
