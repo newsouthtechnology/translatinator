@@ -24,17 +24,17 @@ Or install it yourself as:
 To use Translatinator:
     <br><br>
     translatinator -lang<br>
-        Display supported languages and abbreviations.
+     Display supported languages and abbreviations.
     <br><br>
     translatinator -use LANG \"text-to-translate\"<br>
-        Translate text (LANG = language abbreviation).
+     Translate text (LANG = language abbreviation).
     <br><br>
     translatinator -help, -menu<br>
-        Show these commands again.
+     Show these commands again.
     <br><br>
   Example<br>
-    In your terminal client, type the following command:
-      translatinator -use fr "Good Morning"
+    In your terminal client, type the following command:<br>
+     translatinator -use fr "Good Morning"
 
       Result: "Bon Matin"
 
