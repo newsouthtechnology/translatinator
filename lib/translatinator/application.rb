@@ -92,7 +92,7 @@ module Translatinator
     else
         text = text.gsub(' ', '%20')
 
-        result = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyCy9bWyky8mYNjYrSI-NA68Z4wFQVn__R8&q=' + text + '&source=en&target=' + language
+        result = 'https://www.googleapis.com/language/translate/v2?key=****YOUR KEY HERE*****&q=' + text + '&source=en&target=' + language
         result = HTTP.get(result)
         parsed =  JSON.parse(result)
 
