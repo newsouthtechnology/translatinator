@@ -1,10 +1,9 @@
 #!/usr/bin/env ruby
 
-require 'translatinator'
+require_relative '../lib/translatinator.rb'
 require 'optparse'
 require 'pp'
 
-# container
 options = {}
 
 optparse = OptionParser.new do|opts|
@@ -34,14 +33,3 @@ end
 
 optparse.parse!
 
-# CHECK VALUES
-#   pp "Options:", options
-#   pp "ARGV:", ARGV
-
-
-#CALL THANGS
-#   translatinator -lang
-#   translatinator -l
-#   translatinator use fr "HAVE A NICE DAY"
-#   translatinator -h
-#   translatinator -help

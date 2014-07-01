@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec", "~> 2.14.1"
-  spec.add_development_dependency "thor"
+  spec.add_dependency "http"
+  spec.add_dependency "google-api-client"
 
 end

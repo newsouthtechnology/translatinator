@@ -2,7 +2,6 @@
 module Translatinator
   attr_accessor :input
 
-# convert to hash FTW
   def self.lang
     languageMenu = {
         :Afrikaans => 'AF',
@@ -70,7 +69,7 @@ module Translatinator
         :Welsh => 'CY',
         :Yiddish => 'YI'
     }
-# binding.pry
+
     return languageMenu
     puts ' '
   end

@@ -13,10 +13,13 @@ describe Translatinator do
     expect(result).to be_a(Hash)
   end
 
-    it "translates text" do
-      languageA = 'es'
-      languageB = 'fr'
-      text = 'hello'
+  it "translates text" do
+
+# TODO: ADD VCR
+
+    languageA = 'es'
+    languageB = 'fr'
+    text = 'hello'
 
     resultA = Translatinator.translate(languageA, text)
     resultB = Translatinator.translate(languageB, text)
@@ -25,3 +28,4 @@ describe Translatinator do
     expect(resultB).to eq('bonjour')
   end
 end
+
