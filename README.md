@@ -22,13 +22,14 @@ Or install it yourself as:
 ## Usage
 
 To use Translatinator:
-    translatinator -lang
+    <br><br>
+    translatinator -lang<br>
         Display supported languages and abbreviations.
     <br><br>
-    translatinator -use LANG \"text-to-translate\"
+    translatinator -use LANG \"text-to-translate\"<br>
         Translate text (LANG = language abbreviation).
     <br><br>
-    translatinator -help, -menu
+    translatinator -help, -menu<br>
         Show these commands again.
     <br><br>
   Example<br>
