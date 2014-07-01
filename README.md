@@ -1,6 +1,6 @@
 # Translatinator
 
-TODO: add logo
+![Translatinator](logo.jpg)
 
 ## About
 
