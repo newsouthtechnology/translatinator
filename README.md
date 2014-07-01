@@ -1,4 +1,3 @@
-# Translatinator
 
 ![Translatinator](logo.jpg)
 
